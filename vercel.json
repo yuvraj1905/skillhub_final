@@ -4,7 +4,7 @@
   "builds": [{ "src": "server.js", "use": "@vercel/node" }],
   "headers": [
     {
-      "source": "server.js",
+      "source": "/api/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
