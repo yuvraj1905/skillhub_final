@@ -8,12 +8,14 @@ connectDB();
 
 const PORT = process.env.PORT;
 
+// Cloudinary Config
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
   api_key: process.env.CLOUDINARY_CLIENT_API,
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 
+// RazorPay Instance
 export const instance = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
   key_secret: process.env.RAZORPAY_API_SECRET,
@@ -27,6 +29,6 @@ nodeCorn.schedule("0 0 0 1 * *", async () => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is working on port: ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is working on port: ${process.env.PORT}`);
 });
