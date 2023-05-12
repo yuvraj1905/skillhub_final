@@ -28,5 +28,5 @@ nodeCorn.schedule("0 0 0 1 * *", async () => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is working on port: ${PORT}`.magenta);
+  console.log(`Server is working on port: ${PORT}`);
 });
